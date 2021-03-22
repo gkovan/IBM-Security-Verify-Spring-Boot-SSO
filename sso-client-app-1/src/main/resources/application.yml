@@ -1,0 +1,43 @@
+spring:
+  mvc:
+    log-request-details: true
+  security:
+    oauth2:
+      client:
+        registration:
+          custom:
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
+            scope: read,write
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8082/ui-one/login/oauth2/code/custom
+        provider:
+          custom:
+            authorization-uri: https://gkovan.verify.ibm.com/oidc/endpoint/default/authorize
+            token-uri: https://gkovan.verify.ibm.com/oidc/endpoint/default/token
+            user-info-uri: https://gkovan.verify.ibm.com/oidc/endpoint/default/userinfo
+            user-name-attribute: preferred_username
+            issuer-uri: https://gkovan.verify.ibm.com/oidc/endpoint/default
+            jwk-set-uri: https://gkovan.verify.ibm.com/v1.0/endpoint/default/jwks
+
+  thymeleaf:
+    cache: false
+  cache:
+    type: NONE
+    
+server: 
+  port: 8082
+  servlet: 
+    context-path: /ui-one
+    
+logging: 
+  level: 
+    org.springframework: INFO
+    com.gkovan: DEBUG
+    org.springframework.web.reactive.function.client.ExchangeFunctions: TRACE
+
+
+resourceserver:
+  api:
+    url: http://localhost:8081/sso-resource-server/api/foos/
+              
