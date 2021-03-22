@@ -5,7 +5,7 @@
 	<description>New OAuth2 Stack in Spring Security 5</description>
 
 	<groupId>com.gkovan</groupId>
-	<artifactId>oauth-sso</artifactId>
+	<artifactId>isv-oauth-springboot-sso</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
