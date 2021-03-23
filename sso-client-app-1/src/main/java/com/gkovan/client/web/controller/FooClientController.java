@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.gkovan.client.web.model.FooModel;
-import com.gkovan.client.web.model.UserInfoModel;
+import com.gkovan.client.web.model.TokenInfoModel;
 
 @Controller
 public class FooClientController {
@@ -25,8 +25,8 @@ public class FooClientController {
     @Value("${resourceserver.api.url}")
     private String fooApiUrl;
     
-    @Value("${resourceserver.userinfo.url}")
-    private String userInfoApiUrl;
+    @Value("${resourceserver.tokeninfo.url}")
+    private String tokenInfoApiUrl;
 
     @Autowired
     private WebClient webClient;
@@ -51,22 +51,22 @@ public class FooClientController {
         return "home";
     }
     
-    @GetMapping("/profile")
-    public String getProfile(Model model) {
+    @GetMapping("/token")
+    public String getToken(Model model) {
         Map<String,String> profile = this.webClient.get()
-                .uri(userInfoApiUrl)
+                .uri(tokenInfoApiUrl)
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<Map<String,String>>() {
                 })
                 .block();
         
-        List<UserInfoModel> userInfoList = new ArrayList<UserInfoModel>();
+        List<TokenInfoModel> userInfoList = new ArrayList<TokenInfoModel>();
         for (String key:  profile.keySet()) {
-        	userInfoList.add(new UserInfoModel(key, profile.get(key)));
+        	userInfoList.add(new TokenInfoModel(key, profile.get(key)));
         }
         
-        model.addAttribute("profile", profile);
-        return "profile";
+        model.addAttribute("token", profile);
+        return "token";
     }
     
 }

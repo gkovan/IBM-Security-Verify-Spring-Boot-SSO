@@ -1,6 +1,6 @@
 package com.gkovan.resource.web.controller;
 
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -11,13 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserInfoController {
 
-    @GetMapping("api/user/info")
-    public Map<String, Object> getUserInfo(@AuthenticationPrincipal Jwt principal) {
-        return Collections.singletonMap("user_name", principal.getClaimAsString("preferred_username"));
+    @GetMapping("api/token/info")
+    public Map<String, String> getTokenInfo(@AuthenticationPrincipal Jwt principal) {
+    	
+    	Map<String,String> tokenInfo = new HashMap<String,String>();
+    	tokenInfo.put("user_name", principal.getClaimAsString("preferred_username"));
+    	tokenInfo.put("subject", principal.getClaimAsString("sub"));
+    	tokenInfo.put("client_id", principal.getClaimAsString("client_id"));
+    	tokenInfo.put("scope", principal.getClaimAsString("scope"));
+    	
+    	return tokenInfo;
     }
-    
-//    @GetMapping("api/user/info")
-//    public Map<String, Object> getUserInfo(@AuthenticationPrincipal Jwt principal) {
-//        return Map.of("user_name", "gkovan@hotmail.com");
-//    }
 }

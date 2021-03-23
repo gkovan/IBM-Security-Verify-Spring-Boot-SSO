@@ -40,6 +40,6 @@ logging:
 resourceserver:
   api:
     url: http://localhost:8081/sso-resource-server/api/foos/
-  userinfo:
-    url: http://localhost:8081/sso-resource-server/api/user/info
+  tokeninfo:
+    url: http://localhost:8081/sso-resource-server/api/token/info
               
