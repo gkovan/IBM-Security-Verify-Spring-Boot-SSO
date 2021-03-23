@@ -8,7 +8,7 @@ spring:
           custom:
             client-id: ${CLIENT_ID}
             client-secret: ${CLIENT_SECRET}
-            scope: read,write
+            scope: read,write,openid
             authorization-grant-type: authorization_code
             redirect-uri: http://localhost:8082/ui-one/login/oauth2/code/custom
         provider:

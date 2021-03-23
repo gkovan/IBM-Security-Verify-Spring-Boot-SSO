@@ -46,8 +46,6 @@ public class FooClientController {
     
     @GetMapping("/home")
     public String getHome(Model model) {
-    	
-        model.addAttribute("attr1", "valueOfAttr1");
         return "home";
     }
     

@@ -29,19 +29,26 @@ public class UiSecurityConfig extends WebSecurityConfigurerAdapter {
 	
     @Override
     protected void configure(HttpSecurity http) throws Exception {// @formatter:off
-		http.authorizeRequests().antMatchers("/", "/login**").permitAll().anyRequest().authenticated().and()
-				.oauth2Login().tokenEndpoint()
-				.accessTokenResponseClient(authorizationCodeTokenResponseClient());
+    	
+		http
+			.authorizeRequests().antMatchers("/", "/login**").permitAll()
+				.anyRequest().authenticated()
+				.and()
+			.oauth2Login()
+				.tokenEndpoint().accessTokenResponseClient(authorizationCodeTokenResponseClient());
 
 	}// @formatter:on
     
 	private OAuth2AccessTokenResponseClient<OAuth2AuthorizationCodeGrantRequest> authorizationCodeTokenResponseClient() {
+		
 		OAuth2AccessTokenResponseHttpMessageConverter tokenResponseHttpMessageConverter =
 				new OAuth2AccessTokenResponseHttpMessageConverter();
+		
 		tokenResponseHttpMessageConverter.setTokenResponseConverter(new CustomAccessTokenResponseConverter());
 
 		RestTemplate restTemplate = new RestTemplate(Arrays.asList(
 				new FormHttpMessageConverter(), tokenResponseHttpMessageConverter));
+		
 		restTemplate.setErrorHandler(new OAuth2ErrorResponseErrorHandler());
 
 		DefaultAuthorizationCodeTokenResponseClient tokenResponseClient = new DefaultAuthorizationCodeTokenResponseClient();
