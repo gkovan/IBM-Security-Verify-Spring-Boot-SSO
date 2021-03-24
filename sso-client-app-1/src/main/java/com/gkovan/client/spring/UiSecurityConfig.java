@@ -80,8 +80,8 @@ public class UiSecurityConfig extends WebSecurityConfigurerAdapter {
     // This method returns filter function which will log request data
     private static ExchangeFilterFunction logRequest() {
         return ExchangeFilterFunction.ofRequestProcessor(clientRequest -> {
-            LOG.info("####### REQUEST: ####### {} {}", clientRequest.method(), clientRequest.url());
-            clientRequest.headers().forEach((name, values) -> values.forEach(value -> LOG.info("### HEADER ### {}={}", name, value)));
+            LOG.info("####### GK WebClient REQUEST: ####### {} {}", clientRequest.method(), clientRequest.url());
+            clientRequest.headers().forEach((name, values) -> values.forEach(value -> LOG.info("### GK WebClient HEADER ### {}={}", name, value)));
             return Mono.just(clientRequest);
         });
     }
