@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.gkovan.client.web.model.FooModel;
+import com.gkovan.client.web.model.FoodModel;
 import com.gkovan.client.web.model.TokenInfoModel;
 
 @Controller
@@ -30,6 +31,9 @@ public class FooClientController {
     
     @Value("${resourceserver.tokeninfo.url}")
     private String tokenInfoApiUrl;
+    
+    @Value("${resourceserver.food.url}")
+    private String foodApiUrl;
 
     @Autowired
     private WebClient webClient;
@@ -68,6 +72,19 @@ public class FooClientController {
         
         model.addAttribute("token", profile);
         return "token";
+    }
+    
+    @GetMapping("/foods")
+    public String getFoods(Model model) {
+    	List<FoodModel> foods = this.webClient.get()
+                .uri(foodApiUrl)
+                .retrieve()
+                .bodyToMono(new ParameterizedTypeReference<List<FoodModel>>() {
+                })
+                .block();
+                
+        model.addAttribute("foods", foods);
+        return "foods";
     }
     
     @GetMapping("/principal")
