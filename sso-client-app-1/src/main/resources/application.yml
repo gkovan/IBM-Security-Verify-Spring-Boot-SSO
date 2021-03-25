@@ -39,9 +39,10 @@ logging:
 
 
 resourceserver:
+  food:
+    url: http://localhost:8081/sso-resource-server/api/food 
   api:
     url: http://localhost:8081/sso-resource-server/api/foos/
   tokeninfo:
     url: http://localhost:8081/sso-resource-server/api/token/info
-  food:
-    url: http://localhost:8081/sso-resource-server/api/food              
+             

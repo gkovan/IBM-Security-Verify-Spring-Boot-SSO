@@ -25,10 +25,11 @@ import reactor.core.publisher.Mono;
 
 @EnableWebSecurity
 public class UiSecurityConfig extends WebSecurityConfigurerAdapter {
+	
 	private static final Logger LOG = LoggerFactory.getLogger(UiSecurityConfig.class);
 	
     @Override
-    protected void configure(HttpSecurity http) throws Exception {// @formatter:off
+    protected void configure(HttpSecurity http) throws Exception {
     	
 		http
 			.authorizeRequests().antMatchers("/", "/login**").permitAll()
@@ -37,7 +38,7 @@ public class UiSecurityConfig extends WebSecurityConfigurerAdapter {
 			.oauth2Login()
 				.tokenEndpoint().accessTokenResponseClient(authorizationCodeTokenResponseClient());
 
-	}// @formatter:on
+	}
     
 	private OAuth2AccessTokenResponseClient<OAuth2AuthorizationCodeGrantRequest> authorizationCodeTokenResponseClient() {
 		

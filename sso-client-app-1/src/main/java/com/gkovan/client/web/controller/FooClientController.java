@@ -37,6 +37,19 @@ public class FooClientController {
 
     @Autowired
     private WebClient webClient;
+    
+    @GetMapping("/favorite-foods")
+    public String getFoods(Model model) {
+    	List<FoodModel> favoriteFoods = this.webClient.get()
+                .uri(foodApiUrl)
+                .retrieve()
+                .bodyToMono(new ParameterizedTypeReference<List<FoodModel>>() {
+                })
+                .block();
+                
+        model.addAttribute("foods", favoriteFoods);
+        return "favorite-foods";
+    }
 
     @GetMapping("/foos")
     public String getFoos(Model model) {
@@ -72,19 +85,6 @@ public class FooClientController {
         
         model.addAttribute("token", profile);
         return "token";
-    }
-    
-    @GetMapping("/foods")
-    public String getFoods(Model model) {
-    	List<FoodModel> foods = this.webClient.get()
-                .uri(foodApiUrl)
-                .retrieve()
-                .bodyToMono(new ParameterizedTypeReference<List<FoodModel>>() {
-                })
-                .block();
-                
-        model.addAttribute("foods", foods);
-        return "foods";
     }
     
     @GetMapping("/principal")
