@@ -19,7 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .and()
               .authorizeRequests()
                 .antMatchers("/open/api/test").permitAll()
-                .antMatchers(HttpMethod.GET, "/user/info", "/api/foos/**")
+                .antMatchers(HttpMethod.GET, "/favorite-foods", "/user/info","/api/foos/**")
                   .hasAuthority("SCOPE_read")
                 .antMatchers(HttpMethod.POST, "/api/foos")
                   .hasAuthority("SCOPE_write")
@@ -29,5 +29,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
               .oauth2ResourceServer()
                 .jwt();
     }//@formatter:on
-
 }
