@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "e0530c70-ff46-491b-bb01-519479510af7",
+		"name": "sso-resource-server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "sso-resource-server api/favorite-foods",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNlcnZlciJ9.eyJ1bmlxdWVTZWN1cml0eU5hbWUiOiI2NTIwMDE4SFFUIiwiY2xpZW50X2lkIjoiZjNlOTg4OTktNzU4NC00YTM0LWE4NTUtOTEyNjRiOGRlOTdhIiwicmVhbG1OYW1lIjoiY2xvdWRJZGVudGl0eVJlYWxtIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZ2tvdmFuQGhvdG1haWwuY29tIiwiYXVkIjoiZjNlOTg4OTktNzU4NC00YTM0LWE4NTUtOTEyNjRiOGRlOTdhIiwiZ3JhbnRfdHlwZSI6ImF1dGhvcml6YXRpb25fY29kZSIsImFjciI6InVybjppYm06c2VjdXJpdHk6cG9saWN5OmlkOjEiLCJncmFudF9pZCI6IjAxMWI5YTg2LTA4YjgtNDc5My1hYzhiLTFlMmJhY2YxNGRiMiIsInVzZXJUeXBlIjoicmVndWxhciIsImF1dGhfdGltZSI6MTYxNjY3ODY0Nywic2NvcGUiOiJyZWFkIG9wZW5pZCB3cml0ZSIsImp0aSI6IjNqeWF3Z2I4SXZKWXA1YWtpZnVteFVqU215RTI1RCIsImlzcyI6Imh0dHBzOi8vZ2tvdmFuLnZlcmlmeS5pYm0uY29tL29pZGMvZW5kcG9pbnQvZGVmYXVsdCIsInN1YiI6IjY1MjAwMThIUVQiLCJpYXQiOjE2MTY2Nzg2NDgsImV4cCI6MTYxNjY4NTg0OH0.YTNFH6tTwKCeOOPeotMeJJCya1u0ZMHUEOXvY8cBF9i1pQqnFE-NzmPVP4yCV93xD10MQBWiR0vxSpGTqvckhUmpm6IPOtmVk_ziiTt4O_OgcJan4vhpkBam8xndD3cIn1xHS_fN46mVhbL17ovyfanwJIdjkS0L25g8DMzSzhSFJW1ZEtZUuBmmSRff_UmOilfq-9Pbc3qm7fLqA9HAkcyxtN-ch1A0SrfnkOTvmD7mfEK2oso1lHqniQqBbzCr36RpzKoirEostBQFOAK1VxugZxaj7c1_ZnM0fY5_JIA4s57l02LQ3S7JDy7sJPvUi2WszJ6RptLQTBtSi31KkA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/sso-resource-server/api/favorite-food",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"sso-resource-server",
+						"api",
+						"favorite-food"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sso-resource-server api/foos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNlcnZlciJ9.eyJ1bmlxdWVTZWN1cml0eU5hbWUiOiI2NTIwMDE4SFFUIiwiY2xpZW50X2lkIjoiZjNlOTg4OTktNzU4NC00YTM0LWE4NTUtOTEyNjRiOGRlOTdhIiwicmVhbG1OYW1lIjoiY2xvdWRJZGVudGl0eVJlYWxtIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZ2tvdmFuQGhvdG1haWwuY29tIiwiYXVkIjoiZjNlOTg4OTktNzU4NC00YTM0LWE4NTUtOTEyNjRiOGRlOTdhIiwiZ3JhbnRfdHlwZSI6ImF1dGhvcml6YXRpb25fY29kZSIsImFjciI6InVybjppYm06c2VjdXJpdHk6cG9saWN5OmlkOjEiLCJncmFudF9pZCI6IjAxMWI5YTg2LTA4YjgtNDc5My1hYzhiLTFlMmJhY2YxNGRiMiIsInVzZXJUeXBlIjoicmVndWxhciIsImF1dGhfdGltZSI6MTYxNjY3ODY0Nywic2NvcGUiOiJyZWFkIG9wZW5pZCB3cml0ZSIsImp0aSI6IjNqeWF3Z2I4SXZKWXA1YWtpZnVteFVqU215RTI1RCIsImlzcyI6Imh0dHBzOi8vZ2tvdmFuLnZlcmlmeS5pYm0uY29tL29pZGMvZW5kcG9pbnQvZGVmYXVsdCIsInN1YiI6IjY1MjAwMThIUVQiLCJpYXQiOjE2MTY2Nzg2NDgsImV4cCI6MTYxNjY4NTg0OH0.YTNFH6tTwKCeOOPeotMeJJCya1u0ZMHUEOXvY8cBF9i1pQqnFE-NzmPVP4yCV93xD10MQBWiR0vxSpGTqvckhUmpm6IPOtmVk_ziiTt4O_OgcJan4vhpkBam8xndD3cIn1xHS_fN46mVhbL17ovyfanwJIdjkS0L25g8DMzSzhSFJW1ZEtZUuBmmSRff_UmOilfq-9Pbc3qm7fLqA9HAkcyxtN-ch1A0SrfnkOTvmD7mfEK2oso1lHqniQqBbzCr36RpzKoirEostBQFOAK1VxugZxaj7c1_ZnM0fY5_JIA4s57l02LQ3S7JDy7sJPvUi2WszJ6RptLQTBtSi31KkA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/sso-resource-server/api/foos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"sso-resource-server",
+						"api",
+						"foos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sso-resource-server /test [UNPROTECTED]",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/sso-resource-server/open/api/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"sso-resource-server",
+						"open",
+						"api",
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
