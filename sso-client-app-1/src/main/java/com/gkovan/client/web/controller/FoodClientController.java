@@ -22,7 +22,7 @@ public class FoodClientController {
     private WebClient webClient;
     
     @GetMapping("/favorite-foods")
-    public String getFoods(Model model) {
+    public String getFavoriteFoods(Model model) {
     	List<FoodModel> favoriteFoods = this.webClient.get()
                 .uri(foodApiUrl)
                 .retrieve()

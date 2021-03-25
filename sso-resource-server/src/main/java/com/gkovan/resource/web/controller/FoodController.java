@@ -25,7 +25,7 @@ public class FoodController {
     }
     
     @GetMapping("/api/favorite-food")
-    public Collection<FoodDto> findAll(@AuthenticationPrincipal Jwt principal) {
+    public Collection<FoodDto> getFavoriteFoodsForLoggedInUser(@AuthenticationPrincipal Jwt principal) {
     	
     	String loggedInUser = principal.getClaimAsString("preferred_username");
     	
