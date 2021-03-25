@@ -13,5 +13,4 @@ mvn spring-boot:run
 * Once the two microservices are started, open a browser and go to the following url:
 ```
 http://localhost:8082/ui
-
 ```
