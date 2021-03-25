@@ -10,7 +10,7 @@ spring:
             client-secret: ${CLIENT_SECRET}
             scope: read,write,openid
             authorization-grant-type: authorization_code
-            redirect-uri: http://localhost:8082/ui-one/login/oauth2/code/custom
+            redirect-uri: http://localhost:8082/ui/login/oauth2/code/custom
         provider:
           custom:
             authorization-uri: https://gkovan.verify.ibm.com/oidc/endpoint/default/authorize
@@ -28,7 +28,7 @@ spring:
 server: 
   port: 8082
   servlet: 
-    context-path: /ui-one
+    context-path: /ui
     
 logging: 
   level: 
