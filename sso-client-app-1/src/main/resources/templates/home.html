@@ -3,13 +3,13 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Spring Boot app secured by IBM Security Verify</title>
+	<title>Favorite Foods</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
 </head>
 
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-3 mb-5">
-		<a class="navbar-brand" th:href="@{/foos/}">Spring Boot app secured by IBM Security Verify</a>
+		<a class="navbar-brand" th:href="@{/foos/}">Favorite Foods</a>
 		<ul class="navbar-nav ml-auto">
 			<li class="navbar-text">Hi, <span sec:authentication="name">preferred_username</span>&nbsp;&nbsp;&nbsp;
 			</li>
@@ -17,7 +17,7 @@
 	</nav>
 
 	<div class="container">
-		<h1>List of protected operations that you can perform:</h1>
+		<h5>List of protected operations that you can perform:</h5>
 		<table class="table table-bordered table-striped">
 			<tbody>
 				<tr>
@@ -32,7 +32,7 @@
 	</div>
 
 	<div class="container">
-		<h5>Other operations for testing and debugging:</h5>
+		<h7>Other operations for testing and debugging:</h7>
 		<table class="table table-bordered table-striped">
 			<tbody>
 				<tr>
